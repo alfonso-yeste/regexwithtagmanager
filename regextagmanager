@@ -1,0 +1,122 @@
+Vamos a medir los enlaces salientes. Para ellos vamos a crar una tabla regex pra saber si el usuario lo hace desde un enlace u otro
+
+Nombre del Tag
+Regex ling event action
+La variable de entrada será un {{click URL}}
+
+1. Entrada 2. Salida
+
+.*/(.*)\.(pdf|doc|png|svg|jpgjpeg|zip)¢
+Salida
+Archivo
+
+.*trasmapi\.com.*
+salida
+Trasmapi
+.*booking\.com.*\?.*aid=.*
+Booking
+.*tripadvisor\.es/.*-s1-.*
+Tripadvisor
+^mailto:.*
+email
+^tel:
+telefono
+.*(facebook|twitter|instagram|youtube|linkedin|vimeo|pinterest)\.com/.*^/.*
+Social
+^https://www\.yosoyformentera\.com/.*
+Interno
+
+Luego definir valor predeterminado
+{{click URL}}
+
+
+REGEX LINKS EVENT CATEGORY
+
+
+1. Entrada 2. Salida
+
+.*/(.*)\.(pdf|doc|png|svg|jpgjpeg|zip)$
+Salida
+Descarga de Archivo
+.*trasmapi\.com.*
+salida
+Afiliado
+.*booking\.com.*\?.*aid=.*
+Afiliado
+.*tripadvisor\.es/.*-s1-.*
+Afiliado
+^mailto:.*
+email
+^tel:
+telefono
+.*(facebook|twitter|instagram|youtube|linkedin|vimeo|pinterest)\.com/.*^/.*
+Social
+^https://www\.yosoyformentera\.com/.*
+Interno
+^/.*
+Interno
+
+Luego definir valor predeterminado
+enlaces externos
+
+REGEX LINKS EVENT CATEGORY
+
+
+.*/(.*)\.(pdf|doc|png|svg|jpgjpeg|zip)$
+Salida
+Formato:$2   (esto nos sirve para
+.*trasmapi\.com.*promo=([^&]+(&.*)?       (ejemplo de url)https://www.trasmapi.com/?origin=www.yosoyformentera.com&promo=2020YOSOYFORMENTERA
+salida
+Promo:$1 (con el promo: dolar 1, sabré que tipo me ha funcionado mejor
+.*booking\.com.*\?.*aid=.*highlighted_hotels=([0-9]{5,8});.*
+SALIDA
+$1{{dom h1}}
+Afiliado
+.*tripadvisor\.es/.*-s1-.*
+Afiliado
+^mailto:.*
+email
+^tel:
+telefono
+.*(facebook|twitter|instagram|youtube|linkedin|vimeo|pinterest)\.com/.*^/.*
+Social
+^https://www\.yosoyformentera\.com/.*
+Interno
+^/.*
+Interno
+
+
+Definir valor predeterminado
+
+{{page path}}
+
+Advanced setting
+no distinguir entre
+solo coincidencias totales
+Habilitar grupos de captura y reemplazar funciones
+
+
+
+El activador para esta etiqueta de ga- event- esternal link
+
+Cick solo enlaces
+Esperar etiquetas
+300 milisegundos
+Habilitar este activador cuando se cumplan tidas las condiciones
+Page path coincide con la experesión regular :*
+Este activador se activa en 
+
+Regex links Event Category      no es igual a   interno
+
+
+
+
+
+
+
+
+
+
+
+
+
