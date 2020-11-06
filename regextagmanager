@@ -6,7 +6,7 @@ La variable de entrada será un {{click URL}}
 
 1. Entrada 2. Salida
 
-.*/(.*)\.(pdf|doc|png|svg|jpgjpeg|zip)¢
+.*/(.*)\.(pdf|doc|png|svg|jpg|jpeg|zip)$
 Salida
 Archivo
 
